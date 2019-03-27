@@ -78,6 +78,7 @@ export const call = func => {
   if (options.main.help) {
     const usage = cliUsage(optionsUsage)
     console.log(usage)
+    return Promise.resolve(null)
   } else if (
     R.pipe(
       R.filter(n => n.required),
@@ -91,6 +92,7 @@ export const call = func => {
     )(optionDefinitions)
     const usage = cliUsage(optionsUsage)
     console.log(usage)
+    return Promise.resolve(null)
   } else {
     return func(options)
   }

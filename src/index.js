@@ -19,7 +19,9 @@ const fun = args => {
 }
 
 call(fun)
-  .then(() => {
-    console.log('criado com sucesso')
+  .then(response => {
+    if (response) {
+      console.log('criado com sucesso')
+    }
   }) // TODO fix to multiple errors output
   .catch(err => console.error(err))
